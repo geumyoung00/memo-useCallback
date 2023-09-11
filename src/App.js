@@ -9,14 +9,15 @@ function App() {
   const [showState, setShowState] = useState(false);
   const [isValid, setIsVaild] = useState(false);
   const showHandler = (event) => {
-    setShowState((prev) => !prev);
-  };
-  const isValidHandler = (event) => {
     if (isValid) {
-      setIsVaild(false);
+      setShowState((prev) => !prev);
     } else {
-      setIsVaild(true);
+      setShowState(false);
     }
+  };
+
+  const isValidHandler = (event) => {
+    setIsVaild((prev) => !prev);
   };
 
   console.log("APP 실행 중");
@@ -28,7 +29,9 @@ function App() {
       <Wrapper>
         <MyP isShow={showState}></MyP>
       </Wrapper>
-      <Button onClick={isValidHandler}>Toggle 허용</Button>
+      <Button onClick={isValidHandler}>
+        Toggle {isValid ? "사용 가능" : "사용 불가"}
+      </Button>
     </div>
   );
 }
