@@ -12,19 +12,14 @@ function App() {
     (event) => {
       if (isValid) {
         setShowState((prev) => !prev);
-      } else {
-        setShowState(false);
       }
     },
     [isValid]
   );
 
-  const isValidHandler = useCallback(
-    (event) => {
-      setIsVaild((prev) => !prev);
-    },
-    [isValid]
-  );
+  const isValidHandler = useCallback((event) => {
+    setIsVaild((prev) => !prev);
+  }, []);
 
   console.log("APP 실행 중");
 
