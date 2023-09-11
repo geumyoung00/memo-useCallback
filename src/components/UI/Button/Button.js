@@ -1,8 +1,8 @@
 import React from "react";
-
 import classes from "./Button.module.css";
 
 const Button = (props) => {
+  console.log("Button 실행 중" + props.id);
   return (
     <button
       type={props.type || "button"}
@@ -15,4 +15,4 @@ const Button = (props) => {
   );
 };
 
-export default Button;
+export default React.memo(Button);
